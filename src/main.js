@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import './plugins/element.js'
-
+import TreeTable from 'vue-table-with-tree-grid'
 //导入全局样式表
 import './assets/css/global.css'
 //导入字体图标
@@ -23,6 +23,9 @@ axios.interceptors.request.use(config => {
 Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
+
+//注册全局可用组件 tree-table：插件名称 TreeTable：要注册的插件
+Vue.component('tree-table', TreeTable)
 
 new Vue({
   router,

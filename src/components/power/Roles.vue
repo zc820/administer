@@ -434,7 +434,9 @@ export default {
         //获取到半选中节点的Id
         ...this.$refs.treeRef.getHalfCheckedKeys()
       ]
+      //字符串用 , 号拼接
      const idStr = keys.join(',')
+
       const { data: res } = await this.$http.post(`roles/${this.roleId}/rights`, {rids:idStr})
       if (res.meta.status !== 200) {
         return this.$message.error('分配权限失败!')
