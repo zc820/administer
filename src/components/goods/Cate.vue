@@ -94,6 +94,7 @@
             :props="cascaderProps"
             @change="parentCateChange"
             clearable
+            ref="cascaderRef"
           ></el-cascader>
         </el-form-item>
       </el-form>
@@ -287,6 +288,10 @@ export default {
     //选择项发生变化会触发这个函数
     parentCateChange() {
       console.log(this.selectedKeys)
+
+      //级联选择器选中分类后关闭选择框
+      this.$refs.cascaderRef.dropDownVisible = false;
+      
       //如果selectedKeys 数组中的length > 0 证明选中了父级分类
       //反之，就说明没有选中任何父级分类
       if (this.selectedKeys.length > 0) {
@@ -303,6 +308,7 @@ export default {
         //为当前分类的等级赋值
         this.addCateForm.cat_level = 0
       }
+      
     },
 
     //点击确定按钮，添加新的分类

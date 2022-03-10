@@ -14,7 +14,7 @@ axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
 
 //为axios添加拦截器,请求拦截器相当于再将请求发送到服务器前进行一次预处理，为每一次api的请求挂载Authorization请求头，这样有权限的api就可以调取成功
 axios.interceptors.request.use(config => {
-  console.log(config);
+  //console.log(config);
   config.headers.Authorization = window.sessionStorage.getItem("token");
   //固定写法，最后必须加上 return config
   return config;

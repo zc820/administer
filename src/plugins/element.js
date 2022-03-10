@@ -35,7 +35,10 @@ import {
   Tree,
   Select,
   Option,
-  Cascader
+  Cascader,
+  Alert,
+  Tabs,
+  TabPane,
 } from 'element-ui'
 
 Vue.use(Button)
@@ -65,6 +68,9 @@ Vue.use(Tree)
 Vue.use(Select)
 Vue.use(Option)
 Vue.use(Cascader)
+Vue.use(Alert)
+Vue.use(Tabs)
+Vue.use(TabPane)
 
 //Message组件挂载到vue原型中,其中message是自定义的名字，可更改
 Vue.prototype.$message = Message
