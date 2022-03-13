@@ -256,7 +256,6 @@ export default {
         this.getGoodsList()
         this.editGoodsDialogVisible = false
       })
-      this.$message.error('未完善！')
     },
 
   
