@@ -392,7 +392,7 @@ export default {
 
     //点击按钮，提交修改后的参数信息
     editParams() {
-      //预验证  categories/:id/attributes/:attrId
+      //预验证  
       this.$refs.editFormRef.validate(async valid => {
         if (!valid) return
         const { data: res } = await this.$http.put(
