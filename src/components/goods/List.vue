@@ -242,27 +242,20 @@ export default {
     //点击按钮，确定修改商品信息并提交
     editGoodsInfo() {
       this.editGoodsDialogVisible = false
-      //console.log(this.editGoodsForm) 
+      console.log(this.editGoodsForm) 
       //预验证
-      // this.$refs.editGoodsFormRef.validate(async valid => {
-      //   if (!valid) return
-      //   const { data: res } = await this.$http.post(
-      //    'goods/'+this.editGoodsForm.goods_id,
-      //     { goods_name: this.editGoodsForm.goods_name,
-      //       goods_price: this.editGoodsForm.goods_price,
-      //       goods_number: this.editGoodsForm.goods_number,
-      //       goods_weight: this.editGoodsForm.goods_weight,
-      //       goods_cat: this.editGoodsForm.goods_cat,
-      //     }
-      //   )
-      //   if (res.meta.status !== 200) {
-      //     return this.$message.error('修改商品信息失败！')
-      //   }
-      //   this.$message.success('修改商品信息成功！')
-      //   //更新商品列表
-      //   this.getGoodsList()
-      //   this.editGoodsDialogVisible = false
-      // })
+      this.$refs.editGoodsFormRef.validate(async valid => {
+        if (!valid) return
+        const { data: res } = await this.$http.put(
+         'goods/'+this.editGoodsForm.goods_id, this.editGoodsForm)
+        if (res.meta.status !== 200) {
+          return this.$message.error('修改商品信息失败！')
+        }
+        this.$message.success('修改商品信息成功！')
+        //更新商品列表
+        this.getGoodsList()
+        this.editGoodsDialogVisible = false
+      })
       this.$message.error('未完善！')
     },
 
