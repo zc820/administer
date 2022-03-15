@@ -1,11 +1,6 @@
 <template>
-  <div class="login_container">
+  <div class="wrap">
     <div class="login_box">
-      <!-- 头像区域 -->
-      <div class="avatar_box">
-        <img src="../assets/logo.png" alt>
-      </div>
-
       <!-- 登录表单区域 -->
       <el-form
         ref="loginformref"
@@ -28,11 +23,25 @@
         </el-form-item>
         <!-- 按钮 -->
         <el-form-item label=" " class="btns">
-          <el-button type="primary" @click="login">登录</el-button>
+          <el-button type="info" @click="login">登录</el-button>
           <el-button type="info" @click="resetloginform">重置</el-button>
         </el-form-item>
       </el-form>
     </div>
+
+    <!-- 气泡效果 -->
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
   </div>
 </template>
 
@@ -104,49 +113,36 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.login_container {
-  background-color: #2b4b6b;
-  height: 100%;
-}
+//导入气泡样式文件
+@import '../assets/css/login.css';
 
 .login_box {
   width: 450px;
   height: 300px;
-  background-color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 3px;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 
-  .avatar_box {
-    height: 130px;
-    width: 130px;
-    background-color: #ffffff;
-    border: 1px solid #eeeeee;
-    border-radius: 50%;
-    padding: 10px;
-    box-shadow: 0 0 10px #dddddd;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    img {
-      height: 100%;
-      width: 100%;
-      border-radius: 50%;
-      background-color: #eeeeee;
-    }
-  }
   .btns {
     display: flex;
     justify-content: flex-end;
   }
+  // .login_form {
+  //   position: absolute;
+  //   bottom: 0;
+  //   width: 100%;
+  //   padding: 0 20px;
+  //   box-sizing: border-box;
+  //   right: 25px;
+  // }
   .login_form {
     position: absolute;
-    bottom: 0;
-    width: 100%;
+    transform:translate(-30px,90px);
     padding: 0 20px;
+    width: 100%;
     box-sizing: border-box;
   }
 }

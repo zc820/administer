@@ -155,5 +155,9 @@ export default {
   letter-spacing: 0.2em;
   cursor: pointer;
 }
+
+.el-button {
+  margin-right: 8px;
+}
 </style>
 

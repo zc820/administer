@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h5>Welcome to you</h5>
+    <img src="../assets/welcome.png" alt="" class="pic">
   </div>
 </template>
 
@@ -11,6 +11,17 @@ export default {
 </script>
 
 <style scoped>
+.pic {
+  display: block;
+  width:100%;
+  height: 100%;
+  border: 1px solid #1f1d1d;
+  background: rgb(31, 29, 29);
+  box-sizing: border-box;
+  padding: 1px;
+
+}
+
 
 </style>
 
