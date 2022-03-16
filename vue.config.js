@@ -1,6 +1,6 @@
 module.exports = {
   //publicPath用于对webpack打包之后得到的静态资源前面进行一个路径的拼接
-  //publicPath: './',
+  publicPath: './',
   chainWebpack: config => {
     //发布模式
     config.when(process.env.NODE_ENV === 'production', config => {
